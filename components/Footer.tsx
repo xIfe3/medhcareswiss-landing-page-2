@@ -1,160 +1,162 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import { Phone, Mail, MapPin, FileText } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
-  const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Doctors", href: "#doctors" },
-    { name: "Appointments", href: "#appointments" },
-    { name: "Contact Us", href: "#contact" },
+  const services = [
+    "Concierge Services",
+    "Consultation and Assessment",
+    "Post-Treatment Care",
+    "Comprehensive Diagnostics",
+    "Genetic Research and Testing",
   ];
 
-  const services = [
-    "Emergency Care",
-    "Cardiology",
-    "Neurology",
-    "Orthopedics",
-    "Pediatrics",
-    "Dental Care",
-    "Eye Care",
-    "Laboratory",
+  const usefulLinks = [
+    { name: "Home", href: "#home" },
+    { name: "Services", href: "#services" },
+    { name: "About Us", href: "#about" },
   ];
 
   return (
-    <footer className="bg-[#05427B] text-white">
+    <footer className="bg-[#12151F] text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand Column */}
+        {/* Main Footer Content */}
+        <div className="grid md:grid-cols-3 gap-10 lg:gap-16">
+          {/* Company Info Column */}
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="h-12 w-12 rounded-full bg-white flex items-center justify-center">
-                <div className="h-8 w-8 rounded-full bg-[#5DBA45]"></div>
+            <div className="mb-8">
+              <Link href="#home" className="flex items-center space-x-1 group">
+                <div className="flex items-center">
+                  {/* Actual Logo Image */}
+                  <div className="relative">
+                    <Image
+                      src="/logo.png"
+                      alt="MedHcareSwiss Logo"
+                      width={70}
+                      height={70}
+                      className="object-contain"
+                    />
+                  </div>
+
+                  {/* Text Logo */}
+                  <span className="ml-3 text-2xl font-bold text-white tracking-tight">
+                    MedHcareSwiss
+                  </span>
+                </div>
+              </Link>{" "}
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <MapPin className="h-5 w-5 text-[#5DBA45] mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-white/90">
+                      Route de Chatel-St Denis 107.
+                    </p>
+                    <p className="text-white/90">Town: 1808</p>
+                    <p className="text-white/90">
+                      Les Monts-de-Corsier, Vaud Canton, Switzerland.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <Phone className="h-5 w-5 text-[#5DBA45] mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-white/90">+41 77 503 90 88</p>
+                    <p className="text-white/90">+34 65 236 14 49</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <Mail className="h-5 w-5 text-[#5DBA45] mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-white/90">Info@medhcareswiss.com</p>
+                    <p className="text-white/90">medhcareswiss@gmail.com</p>
+                  </div>
+                </div>
               </div>
-              <span className="text-2xl font-bold">
-                MediCare<span className="text-[#5DBA45]">+</span>
-              </span>
             </div>
-            <p className="text-white/80 mb-6">
-              Providing exceptional healthcare services with compassion and
-              cutting-edge technology for over 25 years.
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#5DBA45] transition-colors"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="#"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#5DBA45] transition-colors"
-              >
-                <Twitter size={18} />
-              </a>
-              <a
-                href="#"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#5DBA45] transition-colors"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href="#"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#5DBA45] transition-colors"
-              >
-                <Linkedin size={18} />
-              </a>
+
+            {/* Registration Info */}
+            <div className="border-t border-white/20 pt-6">
+              <div className="flex items-center mb-3">
+                <FileText className="h-4 w-4 text-[#5DBA45] mr-2" />
+                <span className="text-sm font-medium">Company Details</span>
+              </div>
+              <div className="space-y-2 text-sm text-white/80">
+                <p>Registration Number: CH55011945149</p>
+                <p>Tax Code: IDE/UID CHE-218.696.442</p>
+              </div>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Services Column */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-6 border-l-4 border-[#5DBA45] pl-3">
+              Our Services
+            </h3>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-white/80 hover:text-[#5DBA45] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-xl font-bold mb-6">Our Services</h3>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service}>
+              {services.map((service, index) => (
+                <li key={index}>
                   <a
-                    href="#"
-                    className="text-white/80 hover:text-[#5DBA45] transition-colors"
+                    href="#services"
+                    className="text-white/80 hover:text-[#5DBA45] transition-colors duration-200 flex items-start group"
                   >
-                    {service}
+                    <div className="h-1.5 w-1.5 rounded-full bg-[#5DBA45] mt-2 mr-3 flex-shrink-0"></div>
+                    <span>{service}</span>
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Useful Links Column */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Contact Info</h3>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-[#5DBA45] flex items-center justify-center mr-3 mt-1">
-                  <div className="h-2 w-2 rounded-full bg-white"></div>
-                </div>
-                <p className="text-white/80">
-                  123 Medical Center Drive, Health City, HC 12345
-                </p>
-              </div>
-              <div className="flex items-center">
-                <div className="h-6 w-6 rounded-full bg-[#5DBA45] flex items-center justify-center mr-3">
-                  <div className="h-2 w-2 rounded-full bg-white"></div>
-                </div>
-                <a
-                  href="tel:1234567890"
-                  className="text-white/80 hover:text-[#5DBA45] transition-colors"
-                >
-                  (123) 456-7890
-                </a>
-              </div>
-              <div className="flex items-center">
-                <div className="h-6 w-6 rounded-full bg-[#5DBA45] flex items-center justify-center mr-3">
-                  <div className="h-2 w-2 rounded-full bg-white"></div>
-                </div>
-                <a
-                  href="mailto:info@medicarehospital.com"
-                  className="text-white/80 hover:text-[#5DBA45] transition-colors"
-                >
-                  info@medicarehospital.com
-                </a>
-              </div>
-            </div>
+            <h3 className="text-xl font-bold mb-6 border-l-4 border-[#5DBA45] pl-3">
+              Useful Links
+            </h3>
+            <ul className="space-y-3">
+              {usefulLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-white/80 hover:text-[#5DBA45] transition-colors duration-200 flex items-start group"
+                  >
+                    <div className="h-1.5 w-1.5 rounded-full bg-[#5DBA45] mt-2 mr-3 flex-shrink-0"></div>
+                    <span>{link.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
+        {/* Copyright Section */}
         <div className="border-t border-white/20 mt-12 pt-8 text-center">
-          <p className="text-white/60">
-            © {new Date().getFullYear()} MediCare Hospital. All rights reserved.
-            |
-            <a href="#" className="hover:text-[#5DBA45] transition-colors mx-2">
+          <p className="text-white/90 font-medium">
+            MedHCareSwiss ©2025 All rights reserved.
+          </p>
+          <div className="mt-3 flex justify-center space-x-6 text-sm text-white/70">
+            <a
+              href="#"
+              className="hover:text-white transition-colors duration-200"
+            >
               Privacy Policy
-            </a>{" "}
-            |
-            <a href="#" className="hover:text-[#5DBA45] transition-colors mx-2">
+            </a>
+            <span className="text-white/40">•</span>
+            <a
+              href="#"
+              className="hover:text-white transition-colors duration-200"
+            >
               Terms of Service
             </a>
-          </p>
-          <p className="text-white/60 mt-2 text-sm">
-            This website is for demonstration purposes only.
-          </p>
+            <span className="text-white/40">•</span>
+            <a
+              href="#"
+              className="hover:text-white transition-colors duration-200"
+            >
+              Legal Notice
+            </a>
+          </div>
         </div>
       </div>
     </footer>

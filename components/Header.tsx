@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
+Image;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,13 +22,23 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="#home" className="flex items-center space-x-2">
-            <div className="flex items-center space-x-2">
-              <div className="h-10 w-10 rounded-full bg-[#05427B] flex items-center justify-center">
-                <div className="h-6 w-6 rounded-full bg-[#5DBA45]"></div>
+          {/* Logo with Actual Image */}
+          <Link href="#home" className="flex items-center space-x-1 group">
+            <div className="flex items-center">
+              {/* Actual Logo Image */}
+              <div className="relative">
+                <Image
+                  src="/logo.png"
+                  alt="MedHcareSwiss Logo"
+                  width={60}
+                  height={60}
+                  className="object-contain"
+                />
               </div>
-              <span className="text-2xl font-bold text-[#05427B]">
-                MediCare<span className="text-[#5DBA45]">+</span>
+
+              {/* Text Logo */}
+              <span className="ml-3 text-2xl font-bold text-[#05427B] tracking-tight">
+                medhcareswiss
               </span>
             </div>
           </Link>
@@ -42,9 +54,6 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <button className="bg-[#5DBA45] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#4da83a] transition-colors duration-200">
-              Emergency: (123) 456-7890
-            </button>
           </nav>
 
           {/* Mobile menu button */}
