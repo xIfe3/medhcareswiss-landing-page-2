@@ -7,9 +7,13 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MediCare Hospital | Quality Healthcare Services",
+  title: "MedHcareSwiss | Premium Medical Tourism",
   description:
-    "Leading healthcare provider with expert medical professionals and state-of-the-art facilities",
+    "Your premium partner in Value-based medical healthcare tourism services in Switzerland and Spain.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -19,7 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans">
+      <head>
+        <meta name="theme-color" content="#05427B" />
+      </head>
+      <body className={inter.className}>
         <Header />
         {children}
         <Footer />

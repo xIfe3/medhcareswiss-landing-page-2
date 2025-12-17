@@ -12,8 +12,8 @@ const Header = () => {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "About Us", href: "#about" },
-    { name: "Doctors", href: "#doctors" },
-    { name: "Appointments", href: "#appointments" },
+    { name: "Doctors", href: "#specialist" },
+    { name: "Appointments", href: "#consultation" },
     { name: "Contact Us", href: "#contact" },
   ];
 
@@ -21,8 +21,6 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          {/* Logo with Actual Image */}
           <Link href="#home" className="flex items-center space-x-1 group">
             <div className="flex items-center">
               {/* Actual Logo Image */}

@@ -1,14 +1,4 @@
-import {
-  Award,
-  Heart,
-  Shield,
-  Users,
-  Check,
-  Globe,
-  Plane,
-  Building,
-  Sparkles,
-} from "lucide-react";
+import { Building } from "lucide-react";
 
 const About = () => {
   const services = [
