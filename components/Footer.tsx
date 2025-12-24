@@ -135,6 +135,17 @@ const Footer = () => {
           <p className="text-white/90 font-medium">
             MedHCareSwiss ©2025 All rights reserved.
           </p>
+          <p className="text-white/70 text-sm mt-2">
+            Produced by Dirprints{" "}
+            <a
+              href="https://wa.me/23407042597790"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#5DBA45] hover:text-white transition-colors duration-200"
+            >
+              +23407042597790
+            </a>
+          </p>
           <div className="mt-3 flex justify-center space-x-6 text-sm text-white/70">
             <a
               href="#"
